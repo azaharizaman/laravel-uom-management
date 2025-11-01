@@ -28,6 +28,11 @@
             "Azaharizaman\\LaravelUomManagement\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Azaharizaman\\LaravelUomManagement\\Database\\Factories\\": "database/factories/"
+        }
+    },
     "authors": [
         {
             "name": "Azahari Zaman",
