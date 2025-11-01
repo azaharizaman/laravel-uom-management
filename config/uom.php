@@ -4,7 +4,7 @@ return [
     'conversion' => [
         'default_precision' => 4,
         'math_scale' => 12,
-        'allow_custom_formulas' => true,
+        'allow_custom_formulas' => false,
     ],
 
     'aliases' => [

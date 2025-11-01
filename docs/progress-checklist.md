@@ -17,7 +17,7 @@ Keep this checklist updated as work lands in `main` so we can see the overall pr
 ## 3. Service Provider & Configuration
 - [x] Implement `LaravelUomManagementServiceProvider` with model bindings and package registration
 - [x] Publishable configuration file (`config/uom.php`) with sensible defaults
-- [ ] Bind conversion services and helpers into the container
+- [x] Bind conversion services and helpers into the container
 
 ## 4. Domain Services & Features
 - [ ] Implement core conversion service leveraging `brick/math`

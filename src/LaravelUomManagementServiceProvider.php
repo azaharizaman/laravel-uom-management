@@ -2,7 +2,10 @@
 
 namespace Azaharizaman\LaravelUomManagement;
 
+use Azaharizaman\LaravelUomManagement\Contracts\UnitConverter as UnitConverterContract;
 use Azaharizaman\LaravelUomManagement\Database\Seeders\UomDatabaseSeeder;
+use Azaharizaman\LaravelUomManagement\Services\DefaultUnitConverter;
+use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -28,5 +31,11 @@ class LaravelUomManagementServiceProvider extends PackageServiceProvider
     public function registeringPackage(): void
     {
         $this->app->bindIf('uom.database.seeder', fn () => UomDatabaseSeeder::class);
+
+        $this->app->singleton(UnitConverterContract::class, function ($app) {
+            return new DefaultUnitConverter($app->make(ConfigRepository::class));
+        });
+
+        $this->app->alias(UnitConverterContract::class, 'uom.converter');
     }
 }
