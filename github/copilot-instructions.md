@@ -1,4 +1,5 @@
-# Unit of Measurement (UOM) Management - Database Schema Reference
+# Unit of Measurement (UOM) Management
+Comprehensive Laravel Package for Sophisticated UOM Handling
 
 ---
 
