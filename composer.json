@@ -25,7 +25,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Azaharizaman\\LaravelUomManagement\\": "src/"
+            "Azaharizaman\\LaravelUomManagement\\": "src/",
+            "Azaharizaman\\LaravelUomManagement\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
@@ -43,6 +44,13 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Azaharizaman\\LaravelUomManagement\\LaravelUomManagementServiceProvider"
+            ]
         }
     }
 }
