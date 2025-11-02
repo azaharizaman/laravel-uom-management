@@ -27,8 +27,8 @@ Keep this checklist updated as work lands in `main` so we can see the overall pr
 - [x] Provide custom unit registration APIs with validation
 
 ## 5. Console & Artisan Tooling
-- [ ] Register artisan commands for managing units and conversions
-- [ ] Offer seeding/import command for baseline unit sets
+- [x] Register artisan commands for managing units and conversions
+- [x] Offer seeding/import command for baseline unit sets
 
 ## 6. Testing Strategy
 - [ ] Establish PHPUnit/Testbench harness (`tests/Feature`, `tests/Unit`)

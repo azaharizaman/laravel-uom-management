@@ -2,6 +2,9 @@
 
 namespace Azaharizaman\LaravelUomManagement;
 
+use Azaharizaman\LaravelUomManagement\Console\Commands\UomConvertCommand;
+use Azaharizaman\LaravelUomManagement\Console\Commands\UomListUnitsCommand;
+use Azaharizaman\LaravelUomManagement\Console\Commands\UomSeedCommand;
 use Azaharizaman\LaravelUomManagement\Contracts\AliasResolver as AliasResolverContract;
 use Azaharizaman\LaravelUomManagement\Contracts\CompoundUnitConverter as CompoundUnitConverterContract;
 use Azaharizaman\LaravelUomManagement\Contracts\CustomUnitRegistrar as CustomUnitRegistrarContract;
@@ -25,7 +28,12 @@ class LaravelUomManagementServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-uom-management')
             ->hasConfigFile('uom')
-            ->hasMigration('create_uom_tables');
+            ->hasMigration('create_uom_tables')
+            ->hasCommands([
+                UomSeedCommand::class,
+                UomConvertCommand::class,
+                UomListUnitsCommand::class,
+            ]);
     }
 
     public function bootingPackage(): void
