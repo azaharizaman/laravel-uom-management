@@ -5,8 +5,8 @@ Keep this checklist updated as work lands in `main` so we can see the overall pr
 ## 1. Repository Foundations
 - [x] Establish Composer package metadata and PSR-4 autoloading (`composer.json`)
 - [x] Configure dev autoloading for factories (`composer.json`)
-- [ ] Add base README with package overview and installation steps
-- [ ] Set up CI workflow (PHPUnit + static analysis) in GitHub Actions
+- [x] Add base README with package overview and installation steps
+- [x] Set up CI workflow (PHPUnit + static analysis) in GitHub Actions
 
 ## 2. Data Layer
 - [x] Create initial migration covering core UOM tables (`database/migrations/create_uom_tables.php`)
@@ -43,5 +43,5 @@ Keep this checklist updated as work lands in `main` so we can see the overall pr
 
 ## 8. Release Preparation
 - [ ] Tag initial release (v0.1.0) once core features complete
-- [ ] Draft CHANGELOG capturing highlights
-- [ ] Prepare Packagist submission notes and marketing copy
+- [x] Draft CHANGELOG capturing highlights
+- [x] Prepare Packagist submission notes and marketing copy
