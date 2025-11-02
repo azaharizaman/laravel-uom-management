@@ -4,7 +4,6 @@ namespace Azaharizaman\LaravelUomManagement\Services;
 
 use Azaharizaman\LaravelUomManagement\Contracts\AliasResolver;
 use Azaharizaman\LaravelUomManagement\Contracts\PackagingCalculator;
-use Azaharizaman\LaravelUomManagement\Contracts\UnitConverter;
 use Azaharizaman\LaravelUomManagement\Exceptions\ConversionException;
 use Azaharizaman\LaravelUomManagement\Models\UomPackaging;
 use Azaharizaman\LaravelUomManagement\Models\UomUnit;
@@ -21,7 +20,6 @@ class DefaultPackagingCalculator implements PackagingCalculator
 
     public function __construct(
         private readonly AliasResolver $aliases,
-        private readonly UnitConverter $converter,
         Repository $config
     ) {
         $this->defaultPrecision = (int) $config->get('uom.conversion.default_precision', 4);
@@ -33,6 +31,7 @@ class DefaultPackagingCalculator implements PackagingCalculator
         $packageUnit = $package instanceof UomUnit ? $package : $this->aliases->resolveOrFail((string) $package);
 
         $packaging = UomPackaging::query()
+            ->with(['baseUnit', 'packageUnit'])
             ->where('base_unit_id', $baseUnit->id)
             ->where('package_unit_id', $packageUnit->id)
             ->first();
@@ -41,7 +40,7 @@ class DefaultPackagingCalculator implements PackagingCalculator
             throw ConversionException::packagingPathNotFound($baseUnit, $packageUnit);
         }
 
-        return $packaging->loadMissing(['baseUnit', 'packageUnit']);
+        return $packaging;
     }
 
     public function packagesToBase(BigDecimal|int|float|string $packages, UomPackaging|int $packaging, ?int $precision = null): BigDecimal
@@ -76,10 +75,12 @@ class DefaultPackagingCalculator implements PackagingCalculator
             return $packaging->loadMissing(['baseUnit', 'packageUnit']);
         }
 
-    $model = UomPackaging::query()->with(['baseUnit', 'packageUnit'])->find((int) $packaging);
+        $model = UomPackaging::query()
+            ->with(['baseUnit', 'packageUnit'])
+            ->find((int) $packaging);
 
         if (! $model) {
-            throw new ConversionException("Packaging record '{$packaging}' could not be found.");
+            throw ConversionException::packagingRecordNotFound($packaging);
         }
 
         return $model;

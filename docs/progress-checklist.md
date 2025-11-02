@@ -20,11 +20,11 @@ Keep this checklist updated as work lands in `main` so we can see the overall pr
 - [x] Bind conversion services and helpers into the container
 
 ## 4. Domain Services & Features
-- [ ] Implement core conversion service leveraging `brick/math`
-- [ ] Add alias resolution and lookup helpers
-- [ ] Support compound unit conversion logic
-- [ ] Implement packaging resolution utilities (base ↔ package)
-- [ ] Provide custom unit registration APIs with validation
+- [x] Implement core conversion service leveraging `brick/math`
+- [x] Add alias resolution and lookup helpers
+- [x] Support compound unit conversion logic
+- [x] Implement packaging resolution utilities (base ↔ package)
+- [x] Provide custom unit registration APIs with validation
 
 ## 5. Console & Artisan Tooling
 - [ ] Register artisan commands for managing units and conversions

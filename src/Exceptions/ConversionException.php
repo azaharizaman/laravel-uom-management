@@ -135,4 +135,28 @@ class ConversionException extends RuntimeException
             strtoupper($code)
         ));
     }
+
+    public static function customUnitNotFound(string|int $identifier): self
+    {
+        return new self("Custom unit '{$identifier}' could not be found.");
+    }
+
+    public static function customFormulaNotAllowed(): self
+    {
+        return new self('Custom unit formulas are disabled by configuration and cannot be registered.');
+    }
+
+    public static function customConversionHasZeroFactor(string $sourceCode, string $targetCode): self
+    {
+        return new self(sprintf(
+            "Custom conversion between '%s' and '%s' specifies a zero factor and cannot be registered.",
+            strtoupper($sourceCode),
+            strtoupper($targetCode)
+        ));
+    }
+
+    public static function packagingRecordNotFound(string|int $identifier): self
+    {
+        return new self("Packaging record '{$identifier}' could not be found.");
+    }
 }
