@@ -31,15 +31,15 @@ Keep this checklist updated as work lands in `main` so we can see the overall pr
 - [x] Offer seeding/import command for baseline unit sets
 
 ## 6. Testing Strategy
-- [ ] Establish PHPUnit/Testbench harness (`tests/Feature`, `tests/Unit`)
-- [ ] Cover migrations and models with unit tests
-- [ ] Add feature tests for conversion flows and packaging logic
-- [ ] Track coverage for critical paths (conversion, custom units)
+- [x] Establish PHPUnit/Testbench harness (`tests/Feature`, `tests/Unit`)
+- [x] Cover migrations and models with unit tests
+- [x] Add feature tests for conversion flows and packaging logic
+- [x] Track coverage for critical paths (conversion, custom units)
 
 ## 7. Documentation & Examples
-- [ ] Document configuration options and publishing steps
-- [ ] Provide usage examples for conversions, packaging, custom units
-- [ ] Add upgrade and contribution guidelines
+- [x] Document configuration options and publishing steps
+- [x] Provide usage examples for conversions, packaging, custom units
+- [x] Add upgrade and contribution guidelines
 
 ## 8. Release Preparation
 - [ ] Tag initial release (v0.1.0) once core features complete

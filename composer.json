@@ -31,7 +31,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Azaharizaman\\LaravelUomManagement\\Database\\Factories\\": "database/factories/"
+            "Azaharizaman\\LaravelUomManagement\\Database\\Factories\\": "database/factories/",
+            "Azaharizaman\\LaravelUomManagement\\Tests\\": "tests/"
         }
     },
     "authors": [
