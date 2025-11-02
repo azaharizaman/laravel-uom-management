@@ -2,15 +2,15 @@
 
 namespace Azaharizaman\LaravelUomManagement\Services;
 
-use Azaharizaman\LaravelUomManagement\Contracts\CompoundUnitConverter;
+use Brick\Math\BigDecimal;
+use Brick\Math\RoundingMode;
+use Brick\Math\Exception\MathException;
+use Illuminate\Contracts\Config\Repository;
+use Azaharizaman\LaravelUomManagement\Models\UomUnit;
+use Azaharizaman\LaravelUomManagement\Models\UomCompoundUnit;
 use Azaharizaman\LaravelUomManagement\Contracts\UnitConverter;
 use Azaharizaman\LaravelUomManagement\Exceptions\ConversionException;
-use Azaharizaman\LaravelUomManagement\Models\UomCompoundUnit;
-use Azaharizaman\LaravelUomManagement\Models\UomUnit;
-use Brick\Math\BigDecimal;
-use Brick\Math\Exception\MathException;
-use Brick\Math\RoundingMode;
-use Illuminate\Contracts\Config\Repository;
+use Azaharizaman\LaravelUomManagement\Contracts\CompoundUnitConverter;
 
 class DefaultCompoundUnitConverter implements CompoundUnitConverter
 {
