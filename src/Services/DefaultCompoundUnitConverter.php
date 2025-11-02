@@ -18,7 +18,7 @@ class DefaultCompoundUnitConverter implements CompoundUnitConverter
 
     private int $mathScale;
 
-    private int $roundingMode = RoundingMode::HALF_UP;
+    private RoundingMode $roundingMode = RoundingMode::HALF_UP;
 
     public function __construct(
         private readonly UnitConverter $unitConverter,

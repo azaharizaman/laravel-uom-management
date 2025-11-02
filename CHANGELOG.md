@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Fixed
+- Compatibility with brick/math 0.14+ where RoundingMode constants are now enums instead of integers
+
 ## [v0.1.0] - 2025-11-02
 
 ### Added

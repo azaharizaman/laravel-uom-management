@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1762051895">
-  <project timestamp="1762051895" name="Clover Coverage">
+<coverage generated="1762084401">
+  <project timestamp="1762084401" name="Clover Coverage">
     <package name="Azaharizaman\LaravelUomManagement\Console\Commands">
       <file name="/home/conrad/Dev/azaharizaman/laravel-uom-management/src/Console/Commands/UomConvertCommand.php">
         <class name="Azaharizaman\LaravelUomManagement\Console\Commands\UomConvertCommand" namespace="Azaharizaman\LaravelUomManagement\Console\Commands">

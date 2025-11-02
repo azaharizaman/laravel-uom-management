@@ -16,7 +16,7 @@ class DefaultPackagingCalculator implements PackagingCalculator
 {
     private int $defaultPrecision;
 
-    private int $roundingMode = RoundingMode::HALF_UP;
+    private RoundingMode $roundingMode = RoundingMode::HALF_UP;
 
     public function __construct(
         private readonly AliasResolver $aliases,

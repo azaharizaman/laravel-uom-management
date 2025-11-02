@@ -17,7 +17,7 @@ class DefaultUnitConverter implements UnitConverter
 
     private int $mathScale;
 
-    private int $roundingMode = RoundingMode::HALF_UP;
+    private RoundingMode $roundingMode = RoundingMode::HALF_UP;
 
     /**
      * @var array<int, UomUnit>
